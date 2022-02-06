@@ -34,25 +34,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
     <script>
-        const socket = io('https://react-socket-server-jrc.herokuapp.com/');
+        const socket = io('localhost: 8080');
 
-        //referencias a los archivos del mon
-        const formulario = document.querySelector("#miFormulario");
-        const mensajes = document.querySelector("#misMensajes");
-        const txtMensaje = document.querySelector("#txtMensaje");
+        // //referencias a los archivos del mon
+        // const formulario = document.querySelector("#miFormulario");
+        // const mensajes = document.querySelector("#misMensajes");
+        // const txtMensaje = document.querySelector("#txtMensaje");
 
-        formulario.addEventListener("submit", (e) => {
-            e.preventDefault();
+        // formulario.addEventListener("submit", (e) => {
+        //     e.preventDefault();
 
-            const nuevoMensaje = txtMensaje.value;
+        //     const nuevoMensaje = txtMensaje.value;
             
-            socket.emit('mensaje-to-server', {
-                texto: nuevoMensaje
-            });
-        });
+        //     socket.emit('mensaje-to-server', {
+        //         texto: nuevoMensaje
+        //     });
+        // });
 
         socket.on('mensaje-from-server', data => {
-            mensajes.innerHTML += `<li>${data.texto}</li>`;
+            // mensajes.innerHTML += `<li>${data.texto}</li>`;
         })
     </script>
 </body>
